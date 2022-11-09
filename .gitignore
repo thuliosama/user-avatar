@@ -1,0 +1,16 @@
+.docker/dbdata
+.idea/
+.vscode/
+node_modules/
+build/
+temp/
+.env
+coverage
+ormconfig.json
+dist
+cert
+*.crt
+
+uploads/*
+!uploads/.gitkeep
+.DS_Store

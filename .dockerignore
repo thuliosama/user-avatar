@@ -1,0 +1,15 @@
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+
+
+.docker/dbdata
+.idea/
+.vscode/
+build/
+temp/
+coverage
+dist
+
+.DS_Store
