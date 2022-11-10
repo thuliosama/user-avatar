@@ -17,9 +17,14 @@
     "minikube:dashboard": "minikube dashboard",
     "minikube:ip": "minikube service mv-user-server",
     "docker:ip": "sudo ip addr show docker0",
-    "docker:build": "docker build --no-cache --progress=plain -t mv_user_server:4 .",
-    "docker:do:tag": "docker tag mv_user_server:4 registry.digitalocean.com/mv-user/mv_user_server:4",
-    "docker:do:push": "docker push registry.digitalocean.com/mv-user/mv_user_server:4",
+
+    "docker:build": "docker build --no-cache --progress=plain -t mv_user_server:0.0.8 .",
+    "docker:do:tag": "docker tag mv_user_server:0.0.8 registry.digitalocean.com/mv-user/mv_user_server:0.0.8",
+    "docker:do:push": "docker push registry.digitalocean.com/mv-user/mv_user_server:0.0.8",
+
+    "kubectl:get:service:ingress":"kubectl get svc -n ingress-nginx",
+
+
     "docker:run": "docker run -d -p 3333:3333 --network host --name mv-user-server zemttecnologia/mv_user_server",
     "docker:push": "docker push zemttecnologia/mv_user_server",
     "docker-compose:up": "docker-compose up -d --name mv-user-server --build",

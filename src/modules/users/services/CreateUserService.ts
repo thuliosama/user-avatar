@@ -21,7 +21,12 @@ class CreateUserService {
     contact,
   }: ICreateUser): Promise<IUser> {
     const emailExists = await this.usersRepository.findByEmail(email);
-
+    console.log('create user ', {
+      name,
+      email,
+      password,
+      contact,
+    });
     if (emailExists) {
       throw new AppError('Email address already used.');
     }
