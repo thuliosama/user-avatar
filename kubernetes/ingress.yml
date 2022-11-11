@@ -2,11 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mv-user-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target:  /
-  labels:
-    name: mv-user-ingress
 spec:
+  ingressClassName: nginx
   rules:
   - host: mv-user.api-mv.com.br
     http:
@@ -15,6 +12,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: mv-user-service
+            name: mv-user
             port:
               number: 80

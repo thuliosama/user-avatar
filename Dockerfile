@@ -20,4 +20,3 @@ EXPOSE 3333
 
 CMD yarn start
 
-# docker run -d -p 3333:3333 --name api_mv --rm zemttecnologia/api_server_kub
