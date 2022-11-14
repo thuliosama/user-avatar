@@ -2,7 +2,15 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mv-user-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    kubernetes.io/ingress.class: "nginx"
 spec:
+  tls:
+  - hosts:
+    - mv-user.api-mv.com.br
+
+    secretName: mv-user-tls
   ingressClassName: nginx
   rules:
   - host: mv-user.api-mv.com.br
