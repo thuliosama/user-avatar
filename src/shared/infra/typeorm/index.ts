@@ -8,14 +8,11 @@ import { CreateUserTokens1607917238905 } from './migrations/1607917238905-Create
 
 export const dataSource = new DataSource({
   type: 'mysql',
-  host: process.env.DATABASE_HOST,
-  port: Number(process.env.DATABASE_PORT),
-  username: process.env.DATABASE_USERNAME,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE_NAME,
+  host: 'localhost',
+  port: 3306,
+  username: 'root',
+  password: 'example',
+  database: 'mv_user',
   entities: [User, UserToken],
   migrations: [CreateUsers1607534203339, CreateUserTokens1607917238905],
-  ssl: {
-    ca: fs.readFileSync('./cert/ca-certificate.crt').toString(),
-  },
 });

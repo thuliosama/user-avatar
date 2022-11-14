@@ -11,14 +11,12 @@ class FakeUsersRepository implements IUsersRepository {
     name,
     email,
     password,
-    contact,
   }: ICreateUser): Promise<User> {
     const user = new User();
 
     user.id = uuidv4();
     user.name = name;
     user.email = email;
-    user.contact = contact;
     user.password = password;
 
     this.users.push(user);

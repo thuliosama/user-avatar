@@ -10,21 +10,16 @@
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "migration:rodar": "npm run typeorm -d src/shared/infra/typeorm/index.ts migration:run",
+    "migration:rodar": "yarn typeorm -d src/shared/infra/typeorm/index.ts migration:run",
     "test": "jest",
-
     "minikube:start": "minikube start",
     "minikube:dashboard": "minikube dashboard",
     "minikube:ip": "minikube service mv-user-server",
     "docker:ip": "sudo ip addr show docker0",
-
     "docker:build": "docker build --no-cache --progress=plain -t mv_user_server:0.0.10 .",
     "docker:do:tag": "docker tag mv_user_server:0.0.10 registry.digitalocean.com/mv-user/mv_user_server:0.0.10",
     "docker:do:push": "docker push registry.digitalocean.com/mv-user/mv_user_server:0.0.10",
-
-    "kubectl:get:service:ingress":"kubectl get svc -n ingress-nginx",
-
-
+    "kubectl:get:service:ingress": "kubectl get svc -n ingress-nginx",
     "docker:run": "docker run -d -p 3333:3333 --network host --name mv-user-server zemttecnologia/mv_user_server",
     "docker:push": "docker push zemttecnologia/mv_user_server",
     "docker-compose:up": "docker-compose up -d --name mv-user-server --build",
@@ -46,6 +41,7 @@
     "@types/jest": "^26.0.21",
     "@types/joi": "^14.3.4",
     "@types/jsonwebtoken": "^8.5.0",
+    "@types/multer": "^1.4.7",
     "@types/node": "^14.14.10",
     "@types/nodemailer": "^6.4.0",
     "@types/uuid": "^8.3.0",
@@ -75,6 +71,7 @@
     "handlebars": "^4.7.6",
     "jsonwebtoken": "^8.5.1",
     "mime": "^2.5.0",
+    "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.3",
     "nodemailer": "^6.4.17",
     "pg": "^8.5.1",

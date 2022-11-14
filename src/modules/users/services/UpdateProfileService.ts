@@ -15,7 +15,7 @@ class UpdateProfileService {
   public async execute({
     user_id,
     name,
-    contact,
+
     email,
     password,
     old_password,
@@ -48,7 +48,7 @@ class UpdateProfileService {
 
     user.name = name;
     user.email = email;
-    user.contact = contact;
+
     await this.usersRepository.save(user);
 
     return user;

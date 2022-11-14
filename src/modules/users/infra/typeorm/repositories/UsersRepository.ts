@@ -22,9 +22,9 @@ class UsersRepository implements IUsersRepository {
     name,
     email,
     password,
-    contact,
+
   }: ICreateUser): Promise<User> {
-    const user = this.ormRepository.create({ name, email, password, contact });
+    const user = this.ormRepository.create({ name, email, password });
 
     await this.ormRepository.save(user);
 

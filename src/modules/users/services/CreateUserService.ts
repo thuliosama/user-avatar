@@ -18,14 +18,14 @@ class CreateUserService {
     name,
     email,
     password,
-    contact,
+
   }: ICreateUser): Promise<IUser> {
     const emailExists = await this.usersRepository.findByEmail(email);
     console.log('create user ', {
       name,
       email,
       password,
-      contact,
+
     });
     if (emailExists) {
       throw new AppError('Email address already used.');
@@ -33,13 +33,12 @@ class CreateUserService {
 
     const hashedPassword = await this.hashProvider.generateHash(password);
 
-    const contactNumber = contact.replace(/[^\d]+/g, '');
 
     const user = await this.usersRepository.create({
       name,
       email,
       password: hashedPassword,
-      contact: contactNumber,
+
     });
 
     return user;
