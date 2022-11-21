@@ -13,7 +13,7 @@ export default class SessionsController {
       email,
       password,
     });
-
+    console.log('create sessao', user);
     return response.json(classToClass(user));
   }
 }

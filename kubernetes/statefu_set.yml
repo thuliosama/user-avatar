@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mv-user-csi-app-set
+  name: mv-user-csi-a
 spec:
   selector:
     matchLabels:
@@ -21,10 +21,10 @@ spec:
         - infinity
         volumeMounts:
         - mountPath: "/data"
-          name: mv-user-pvc
+          name: mv-user-a-pvc
   volumeClaimTemplates:
   - metadata:
-      name: mv-user-pvc
+      name: mv-user-a-pvc
     spec:
       accessModes:
       - ReadWriteOnce

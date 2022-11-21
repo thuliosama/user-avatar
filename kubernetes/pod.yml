@@ -25,6 +25,6 @@ spec:
     spec:
       containers:
         - name: mv-user
-          image: registry.digitalocean.com/mv-user/mv_user_server:0.0.10
+          image: registry.digitalocean.com/mv-user/mv_user_server:0.0.11
           ports:
             - containerPort: 3333
